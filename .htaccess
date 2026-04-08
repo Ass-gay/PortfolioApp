@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# Global
+RewriteRule ^admin$ admin.php
+RewriteRule ^home$ index.php
+RewriteRule ^serviceDetail$ serviceDetail.php
+RewriteRule ^login$ login.php
+RewriteRule ^logout$ controller/user/UserMainController.php?logout=1
+
+
+#--------------------- view ---------------------
+
+# Projet / Service
+RewriteRule ^listeProjetService$ view/pages/admin/projetService/liste.php
+
+# User
+RewriteRule ^listeUser$ view/pages/admin/user/liste.php
+
+#Contact
+RewriteRule ^listeContact$ view/pages/admin/contact/liste.php
+
+#--------------------- Controller ---------------------
+RewriteRule ^contactMainController$ controller/contact/ContactMainController.php
+RewriteRule ^projetServiceMainController$ controller/projetService/ProjetServiceMainController.php
+RewriteRule ^userMainController$ controller/user/userMainController.php
+
+#--------------------- Model ---------------------
+RewriteRule ^userRepo$ model/UserRepository.php
+RewriteRule ^projetServiceRepo$ model/ProjetServiceRepository.php
+RewriteRule ^userRepo$ model/ContactRepository.php

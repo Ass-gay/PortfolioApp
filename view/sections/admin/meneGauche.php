@@ -30,33 +30,31 @@
 							<i class="fa fa-th-large"></i>
 							<span>Dashboard</span>
 						</a>
-						<ul class="sub-menu">
-							<li><a href="index.html">Dashboard v1</a></li>
-							
-						</ul>
+						
 					</li>
 
-				 	<!-- ================== Service / Realisation ================== -->
+				 	<!-- ================== Service / Projet ================== -->
 					<li class="has-sub">
-						<a href="listeServiceRea">
+						<a href="listeProjetService">
 							<i class="fa fa-briefcase"></i>
-							<span>Service / Realisation</span>
+							<span>Service / Projet</span>
 						</a>
 					</li>
+
+					<!-- ================== Competence ================== -->
+					<li class="has-sub">
+						<a href="listeCompetence">
+							<i class="fa fa-tools"></i>
+							<span>Competence</span>
+						</a>
+					</li>
+
 
 					<!-- ================== Contact ================== -->
 					<li class="has-sub">
 						<a href="listeContact">
 							<i class="fa fa-tty"></i>
 							<span>Contact</span>
-						</a>
-					</li>
-
-					<!-- ================== Newseletter ================== -->
-					<li class="has-sub">
-						<a href="listeNewseletter">
-							<i class="fa fa-envelope-open"></i>
-							<span>Newseletter</span>
 						</a>
 					</li>
 

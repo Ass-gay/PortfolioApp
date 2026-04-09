@@ -10,7 +10,7 @@
                         sp.*,
                         u1.email as created_by_email,
                         u2.email as updated_by_email
-                    FROM projetServices sr
+                    FROM projetServices sp
                     LEFT JOIN
                         users u1 ON sp.created_by = u1.id
 
@@ -62,14 +62,13 @@
         }
 
         // Permet d'ajouter une nouvelle service ou projet
-        public function add($nom, $titre, $description, $photo, $type, $createdBy)
+        public function add($titre, $description, $photo, $type, $createdBy)
         {
-            $sql = "INSERT INTO projetServices (nom, titre, description, photo, type, etat, created_at, created_by)
-                    VALUES (:nom, :titre, :description, :photo, :type, default, NOW(), :created_by) ";
+            $sql = "INSERT INTO projetServices (titre, description, photo, type, etat, created_at, created_by)
+                    VALUES (:titre, :description, :photo, :type, default, NOW(), :created_by) ";
             try {
                 $statement = $this->db->prepare($sql);
                 $statement->execute([
-                    'nom' => $nom,
                     'titre' => $titre,
                     'description' => $description,
                     'photo' => $photo,
@@ -79,17 +78,16 @@
                 $lastInsertId = $this->db->lastInsertId();
                 return $lastInsertId ?: null;
             } catch (PDOException $error) {
-                error_log("Erreur lors de l'ajout de la service/projet $nom " . $error->getMessage());
+                error_log("Erreur lors de l'ajout de la service/projet $titre " . $error->getMessage());
                 throw $error;
             }
         }
 
         // Permet de modifier une nouvelle service ou projet
-        public function edit($id, $nom, $titre, $description, $photo, $type, $updatedBy)
+        public function edit($id, $titre, $description, $photo, $type, $updatedBy)
         {
           $sql = "UPDATE projetServices
-            SET nom = :nom, 
-                titre = :titre,
+            SET titre = :titre,
                 description = :description,
                 photo = :photo, 
                 type = :type,
@@ -99,7 +97,6 @@
             try {
                 $statement = $this->db->prepare($sql);
                 $statement->execute([
-                    'nom' => $nom,
                     'titre' => $titre,
                     'description' => $description,
                     'photo' => $photo,
@@ -110,7 +107,7 @@
                 $rowAffected = $statement->rowCount();
                 return $rowAffected > 0; // True Si $rowAffected > 0
             } catch (PDOException $error) {
-                error_log("Erreur lors la modification de la service/projet $nom " . $error->getMessage());
+                error_log("Erreur lors la modification de la service/projet $titre " . $error->getMessage());
                 throw $error;
             }
         }

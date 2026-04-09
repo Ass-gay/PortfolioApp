@@ -9,7 +9,7 @@
 		<?php require_once ("../../../sections/admin/verifieSession.php"); ?>
 
 
-	<!-- ========= Recuperation liste servicerea Dans BD ========= -->
+	<!-- ========= Recuperation liste serviceProjet Dans BD ========= -->
  	<?php
 
  		require_once("../../../../model/ProjetServiceRepository.php");
@@ -19,7 +19,7 @@
 			$listeprojetService = $projetServiceRepository->getAll(1);
 			$listeprojetServiceSupprimer = $projetServiceRepository->getAll(0);
 		} catch (Exception $error) {
-			echo "<P>Erreur lors du changement de liste des servicesReas" . $error->getMessage() . "</P>";
+			echo "<P>Erreur lors du changement de liste des projetServices" . $error->getMessage() . "</P>";
 			$listeprojetService = [];
 		}
 	?>
@@ -43,19 +43,19 @@
         <div id="content" class="content">
 			<ol class="breadcrumb float-xl-right">
 				<li class="breadcrumb-item">
-                    <a href="#modal-add-service-rea" class="btn btn-sm btn-dark text-white fw-bold" data-toggle="modal">Ajouter</a>
+                    <a href="#modal-add-service-projet" class="btn btn-sm btn-dark text-white fw-bold" data-toggle="modal">Ajouter</a>
                 </li>
 				<li id="btn-show-liste" class="breadcrumb-item"><a href="#" class="btn btn-sm btn-dark text-white fw-bold">Afficher Liste</a></li>
 				<li id="btn-show-corbeille" class="breadcrumb-item"><a href="#" class="btn btn-sm btn-dark text-white fw-bold">Afficher Corbeille</a></li>
 				<li class="breadcrumb-item active"><a href="listeUser" class="btn btn-sm btn-dark text-white fw-bold">User</a></li>
 			</ol>
 	        <!-- ================== SECTION HEADER ================== -->
-			<h1 class="page-header"># Service / Réalisation</h1>
+			<h1 class="page-header"># Service / Projet</h1>
 
-			<!-- Liste Service/Realisation -->
+			<!-- Liste Service/Projet -->
 			<div id="table-liste" class="panel panel-inverse">
 				<div class="panel-heading">
-					<h4 class="panel-title">Liste Service / Réalisation</h4>
+					<h4 class="panel-title">Liste Service / Projet</h4>
 					<div class="panel-heading-btn">
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -68,7 +68,7 @@
 						<thead>
 							<tr>
 								<th width="1%" data-orderable="false">Photo</th>
-								<th class="text-nowrap text-center">Nom</th>
+								<th class="text-nowrap text-center">Titre</th>
 								<th class="text-nowrap text-center">Description</th>
 								<th class="text-nowrap text-center">Type</th>
 								<th class="text-nowrap text-center">Créer le</th>
@@ -78,44 +78,44 @@
 						</thead>
 						<tbody>
 							<?php if(!empty($listeprojetService)) : ?>
-								<?php foreach ($listeprojetService as $serviceRea) : ?>
+								<?php foreach ($listeprojetService as $serviceProjet) : ?>
 									<tr class="odd gradeX">
 
 										<!-- Photo -->
 										<td width="1%" class="with-img text-center">
-											<?php if(!empty($serviceRea['photo'])) : ?>	
-												<img src="public/images/servicesRea/<?= htmlspecialchars($serviceRea['photo']); ?>" style="width: 40px; height: 40px;" class="img-rounded height-30" />
+											<?php if(!empty($serviceProjet['photo'])) : ?>	
+												<img src="public/images/projetService/<?= htmlspecialchars($serviceProjet['photo']); ?>" style="width: 40px; height: 40px;" class="img-rounded height-30" />
 											<?php else :?>
-												<img src="public/images/servicesRea/default.png" class="img-rounded height-30" />
+												<img src="public/images/projetService/default.png" class="img-rounded height-30" />
 											<?php endif ?>
 										</td>
 										
-										<!-- Nom -->
+										<!-- titre -->
 										<td class="text-center">
-											<?= htmlspecialchars($serviceRea['nom']); ?>
+											<?= htmlspecialchars($serviceProjet['titre']); ?>
 										</td>
 
 										<!-- Description -->
-										<td class="text-center" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($serviceRea['description']); ?>">
-											<?= htmlspecialchars(mb_substr($serviceRea['description'], 0, 20)) . (strlen($serviceRea['description']) > 20 ? "... Lire Plus" : ""); ?>
+										<td class="text-center" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($serviceProjet['description']); ?>">
+											<?= htmlspecialchars(mb_substr($serviceProjet['description'], 0, 20)) . (strlen($serviceProjet['description']) > 20 ? "... Lire Plus" : ""); ?>
 										</td>
 
 										<!-- type -->
 										<td class="text-center">
-											<?= htmlspecialchars($serviceRea['type'] === "R" ? "Realisation" : "Service"); ?>
+											<?= htmlspecialchars($serviceProjet['type'] === "Projet" ? "Projet" : "Service"); ?>
 										</td>
 
 										<!-- Creer Le -->
 										<td class="text-center">
-											<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceRea['created_at'])); ?> </br>
-												par <?= htmlspecialchars($serviceRea['created_by_email']); ?>
+											<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceProjet['created_at'])); ?> </br>
+												par <?= htmlspecialchars($serviceProjet['created_by_email']); ?>
 										</td>
 
 										<!-- Modifier Le -->
 										<td class="text-center">
-											<?php if($serviceRea['updated_at']) :?>
-												<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceRea['updated_at'])); ?> </br>
-												par <?= htmlspecialchars($serviceRea['updated_by_email']); ?>
+											<?php if($serviceProjet['updated_at']) :?>
+												<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceProjet['updated_at'])); ?> </br>
+												par <?= htmlspecialchars($serviceProjet['updated_by_email']); ?>
 											<?php else :?>
 												<span class='text-danger f-w-700'>jamais modifier</span>
 											<?php endif?>
@@ -125,28 +125,28 @@
 										<td class="text-center">
 											<!-- Edition -->
 											 <a href="javascript:;"
-												data-id="<?= htmlspecialchars($serviceRea['id']); ?>"
-												data-nom="<?= htmlspecialchars($serviceRea['nom']); ?>"
-												data-description="<?= htmlspecialchars($serviceRea['description']); ?>"
-												data-type="<?= htmlspecialchars($serviceRea['type']); ?>"
-												data-photo="<?= htmlspecialchars($serviceRea['photo']); ?>"
-												class="btn-edit" data-toggle="modal" data-target="#modal-edit-service-rea" title="Modifier"
+												data-id="<?= htmlspecialchars($serviceProjet['id']); ?>"
+												data-titre="<?= htmlspecialchars($serviceProjet['titre']); ?>"
+												data-description="<?= htmlspecialchars($serviceProjet['description']); ?>"
+												data-type="<?= htmlspecialchars($serviceProjet['type']); ?>"
+												data-photo="<?= htmlspecialchars($serviceProjet['photo']); ?>"
+												class="btn-edit" data-toggle="modal" data-target="#modal-edit-service-projet" title="Modifier"
 											 >
 												<i class="fa fa-edit btn btn-success fw-bold"></i>
 											 </a>
 
 											 <!-- Suppressions -->
 											 <a href="#"
-											 data-id="<?= htmlspecialchars($serviceRea['id']); ?>"
-											 data-name="<?= htmlspecialchars($serviceRea['nom']); ?>"
-											class="btn-delete" data-toggle="tooltip" data-placement="top" title="Supprimer">
+											 data-id-serviceProjet="<?= htmlspecialchars($serviceProjet['id']); ?>"
+											 data-name-serviceProjet="<?= htmlspecialchars($serviceProjet['titre']); ?>"
+											class="btn-delete-serviceProjet" data-toggle="tooltip" data-placement="top" title="Supprimer">
 												<i class="fa fa-trash btn btn-danger fw-bold"></i>
 											 </a>
 										</td>
 									</tr>
 								<?php endforeach ?>
 							<?php else :?>
-								<p class="alert alert-danger text-center h3 fw-bold">La liste des services/realisations est vide !</p>
+								<p class="alert alert-danger text-center h3 fw-bold">La liste des services/projet est vide !</p>
 							<?php endif ?>
 
 						</tbody>
@@ -157,7 +157,7 @@
 			<!-- Corbeille Service/Realisation -->
 			<div id="table-corbeille" class="panel panel-inverse">
 				<div class="panel-heading">
-					<h4 class="panel-title">Corbeille Service / Réalisation</h4>
+					<h4 class="panel-title">Corbeille Service / Projet</h4>
 					<div class="panel-heading-btn">
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -170,7 +170,7 @@
 						<thead>
 							<tr>
 								<th width="1%" data-orderable="false">Photo</th>
-								<th class="text-nowrap text-center">Nom</th>
+								<th class="text-nowrap text-center">Titre</th>
 								<th class="text-nowrap text-center">Description</th>
 								<th class="text-nowrap text-center">Type</th>
 								<th class="text-nowrap text-center">Créer le</th>
@@ -180,44 +180,44 @@
 						</thead>
 						<tbody>
 							<?php if(!empty($listeprojetServiceSupprimer)) : ?>
-								<?php foreach ($listeprojetServiceSupprimer as $serviceRea) : ?>
+								<?php foreach ($listeprojetServiceSupprimer as $serviceProjet) : ?>
 									<tr class="odd gradeX">
 
 										<!-- Photo -->
 										<td width="1%" class="with-img text-center">
-											<?php if(!empty($serviceRea['photo'])) : ?>	
-												<img src="public/images/servicesRea/<?= htmlspecialchars($serviceRea['photo']); ?>" style="width: 40px; height: 40px;" class="img-rounded height-30" />
+											<?php if(!empty($serviceProjet['photo'])) : ?>	
+												<img src="public/images/projetService/<?= htmlspecialchars($serviceProjet['photo']); ?>" style="width: 40px; height: 40px;" class="img-rounded height-30" />
 											<?php else :?>
-												<img src="public/images/servicesRea/default.png" class="img-rounded height-30" />
+												<img src="public/images/projetService/default.png" class="img-rounded height-30" />
 											<?php endif ?>
 										</td>
 										
-										<!-- Nom -->
+										<!-- Titre -->
 										<td class="text-center">
-											<?= htmlspecialchars($serviceRea['nom']); ?>
+											<?= htmlspecialchars($serviceProjet['titre']); ?>
 										</td>
 
 										<!-- Description -->
-										<td class="text-center" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($serviceRea['description']); ?>">
-											<?= htmlspecialchars(mb_substr($serviceRea['description'], 0, 20)) . (strlen($serviceRea['description']) > 20 ? "... Lire Plus" : ""); ?>
+										<td class="text-center" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($serviceProjet['description']); ?>">
+											<?= htmlspecialchars(mb_substr($serviceProjet['description'], 0, 20)) . (strlen($serviceProjet['description']) > 20 ? "... Lire Plus" : ""); ?>
 										</td>
 
 										<!-- type -->
 										<td class="text-center">
-											<?= htmlspecialchars($serviceRea['type'] === "R" ? "Realisation" : "Service"); ?>
+											<?= htmlspecialchars($serviceProjet['type'] === "Projet" ? "Projet" : "Service"); ?>
 										</td>
 
 										<!-- Creer Le -->
 										<td class="text-center">
-											<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceRea['created_at'])); ?> </br>
-												par <?= htmlspecialchars($serviceRea['created_by_email']); ?>
+											<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceProjet['created_at'])); ?> </br>
+												par <?= htmlspecialchars($serviceProjet['created_by_email']); ?>
 										</td>
 
 										<!-- Modifier Le -->
 										<td class="text-center">
-											<?php if($serviceRea['updated_at']) :?>
-												<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceRea['updated_at'])); ?> </br>
-												par <?= htmlspecialchars($serviceRea['updated_by_email']); ?>
+											<?php if($serviceProjet['updated_at']) :?>
+												<?= htmlspecialchars(date("d/m/Y H:i:s"), strtotime($serviceProjet['updated_at'])); ?> </br>
+												par <?= htmlspecialchars($serviceProjet['updated_by_email']); ?>
 											<?php else :?>
 												<span class='text-danger fw-700'>jamais modifier</span>
 											<?php endif?>
@@ -227,16 +227,16 @@
 										<td class="text-center">
 											<!-- Restaurer -->
 											 <a href="#"
-											 data-id="<?= htmlspecialchars($serviceRea['id']); ?>"
-											 data-name="<?= htmlspecialchars($serviceRea['nom']); ?>"
+											 data-id="<?= htmlspecialchars($serviceProjet['id']); ?>"
+											 data-name="<?= htmlspecialchars($serviceProjet['titre']); ?>"
 												class="btn-restaurer" data-toggle="tooltip" data-placement="top" title="Restaurer">
 												<span class="btn btn-warning fw-bold">Restaurer</span>
 											 </a>
 
 											 <!-- Supprimer def -->
 											  <a href="#"
-											 data-id="<?= htmlspecialchars($serviceRea['id']); ?>"
-											 data-name="<?= htmlspecialchars($serviceRea['nom']); ?>"
+											 data-id="<?= htmlspecialchars($serviceProjet['id']); ?>"
+											 data-name="<?= htmlspecialchars($serviceProjet['titre']); ?>"
 												class="btn-sup-def" data-toggle="tooltip" data-placement="top" title="supDef">
 												<span class="btn btn-danger fw-bold">Sup Def</span>
 											 </a>
@@ -244,7 +244,7 @@
 									</tr>
 								<?php endforeach ?>
 							<?php else :?>
-								<p class="alert alert-danger text-center h3 fw-bold">Aucun services ou realisations supprime !</p>
+								<p class="alert alert-danger text-center h3 fw-bold">Aucun services ou Projet supprime !</p>
 							<?php endif ?>
 
 						</tbody>
@@ -254,14 +254,14 @@
 		</div>
 
 
-	<!-- ================== SECTION MODAL ADD SERVICE / REALISATION ================== -->
-        <div class="modal fade" id="modal-add-service-rea" data-backdrop="static" data-keyboard="false">
+	<!-- ================== SECTION MODAL ADD SERVICE / PROJET ================== -->
+        <div class="modal fade" id="modal-add-service-projet" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     
                     <!-- HEADER -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Ajouter une réalisation</h4>
+                        <h4 class="modal-title">Ajouter un Projet</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -269,12 +269,12 @@
                     
                     <div class="modal-body">
 
-                        <form action="serviceReaMainController" method="POST" enctype="multipart/form-data" id="addRealisationForm">
+                        <form action="projetServiceMainController" method="POST" enctype="multipart/form-data" id="addProjetServiceForm">
                             
-                                <!-- Nom -->
+                                <!-- Titre -->
                                 <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" name="nom" class="form-control" id="nom" placeholder="Entrer le nom" required>
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="titre" class="form-control" id="titre" placeholder="Entrer le titre" required>
 									<p class="error-message mt-2"></p>
                                 </div>
 
@@ -297,8 +297,8 @@
                                     <label for="type">Type</label>
                                     <select name="type" class="form-control" id="type" required>
                                         <option value="">-- Choisir le type --</option>
-                                        <option value="R">Réalisation</option>
-                                        <option value="S">Service</option>
+                                        <option value="Projet">Projet</option>
+                                        <option value="Service">Service</option>
                                     </select>
 									<p class="error-message mt-2"></p>
                                 </div>
@@ -306,7 +306,7 @@
                                 
                                 <!-- Soumissions -->
                                 <div style="display: flex; justify-content: center;">
-                                    <button type="submit" name="frmAddServiceRea" class="btn btn-primary fw-bold">Ajouter</button>
+                                    <button type="submit" name="frmAddServiceProjet" class="btn btn-primary fw-bold">Ajouter</button>
                                     <button type="reset" name="" class="btn btn-danger fw-bold">Annuler</button>
                                 </div>
                                 
@@ -318,14 +318,14 @@
         </div>
 
 	
-	<!-- ================== SECTION MODAL EDIT SERVICE / REALISATION ================== -->
-        <div class="modal fade" id="modal-edit-service-rea" data-backdrop="static" data-keyboard="false">
+	<!-- ================== SECTION MODAL EDIT SERVICE / PROJET ================== -->
+        <div class="modal fade" id="modal-edit-service-projet" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     
                     <!-- HEADER -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Modifier une réalisation</h4>
+                        <h4 class="modal-title">Modifier une Projet</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -333,12 +333,12 @@
                     
                     <div class="modal-body">
 
-                        <form action="serviceReaMainController" method="POST" enctype="multipart/form-data" id="editRealisationForm">
+                        <form action="projetServiceMainController" method="POST" enctype="multipart/form-data" id="editServiceProjetForm">
                             
-                                <!-- Nom -->
+                                <!-- Titre -->
                                 <div class="form-group">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" name="edit-nom" class="form-control" id="edit-nom" placeholder="Modifier le nom" required>
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="edit-titre" class="form-control" id="edit-titre" placeholder="Modifier le titre" required>
 									<p class="error-message mt-2"></p>
                                 </div>
 
@@ -364,8 +364,8 @@
                                     <label for="type">Type</label>
                                     <select name="edit-type" class="form-control" id="edit-type" required>
                                         <option value="">-- Choisir le type --</option>
-                                        <option value="R">Réalisation</option>
-                                        <option value="S">Service</option>
+                                        <option value="Projet">Projet</option>
+                                        <option value="Service">Service</option>
                                     </select>
 									<p class="error-message mt-2"></p>
                                 </div>
@@ -375,7 +375,7 @@
                                 
                                 <!-- Soumissions -->
                                 <div style="display: flex; justify-content: center;">
-                                    <button type="submit" name="frmEditServiceRea" class="btn btn-primary fw-bold">Modifier</button>
+                                    <button type="submit" name="frmEditServiceProjet" class="btn btn-primary fw-bold">Modifier</button>
                                 </div>
                                 
                         </form>
@@ -385,6 +385,8 @@
             </div>
         </div>
 
+	
+	
         
 	<!-- ================== SECTION CONFIG PANEL ================== -->
 		<?php require_once ("../../../sections/admin/config.php"); ?>

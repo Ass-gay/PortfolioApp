@@ -106,6 +106,20 @@
             }
         }
 
+        // Permet de deconecter un administrateur
+        public function logout()
+        {
+            // Suppression des variable de saissions
+            session_unset();
+            session_destroy();
+
+            if (isset($_COOKIE['remember_me'])) {
+                    setcookie('remember_me', '', time() - 3000, '/', '', false, true);
+                }
+
+                $this->setSuccessAndRedirect("Vous avez ete deconecte avec succes", "Deconnexion Reussie.", "home");
+        }
+
         
     }
     

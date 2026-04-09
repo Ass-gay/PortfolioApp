@@ -44,13 +44,13 @@
 			}
 		}
 
-		loadScriptsIfPathEndsWhith("listeServiceRea",[
-			"public/js/serviceRea/addFrmValidator.js",
-			"public/js/serviceRea/editFrmValidator.js",
-			"public/js/serviceRea/confirmDelet.js",
-			"public/js/serviceRea/confirmRestaurer.js",
-			"public/js/serviceRea/confirmSupDef.js",
-			"public/js/serviceRea/showHide.js"
+		loadScriptsIfPathEndsWhith("listeProjetService",[
+			"public/js/projetSercive/addFrmValidator.js",
+			"public/js/projetSercive/editFrmValidator.js",
+			"public/js/projetSercive/confirmDeletProjet.js",
+			"public/js/projetSercive/confirmRestaurerProjetServi.js",
+			"public/js/projetSercive/confirmSupDefProjetServi.js",
+			"public/js/projetSercive/showHide.js"
 
 		]);
 

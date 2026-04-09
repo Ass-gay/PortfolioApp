@@ -8,4 +8,9 @@
         $userController->auth();
     }
 
+    // Permet de deconnecter
+    if (isset($_GET['logout'])) {
+        $userController->logout();
+    }
+
 ?>

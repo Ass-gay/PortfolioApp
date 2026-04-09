@@ -3,7 +3,6 @@ RewriteEngine On
 # Global
 RewriteRule ^admin$ admin.php
 RewriteRule ^home$ index.php
-RewriteRule ^serviceDetail$ serviceDetail.php
 RewriteRule ^login$ login.php
 RewriteRule ^logout$ controller/user/UserMainController.php?logout=1
 
@@ -13,6 +12,9 @@ RewriteRule ^logout$ controller/user/UserMainController.php?logout=1
 # Projet / Service
 RewriteRule ^listeProjetService$ view/pages/admin/projetService/liste.php
 
+# Competence
+RewriteRule ^listeCompetence$ view/pages/admin/competence/liste.php
+
 # User
 RewriteRule ^listeUser$ view/pages/admin/user/liste.php
 
@@ -21,10 +23,12 @@ RewriteRule ^listeContact$ view/pages/admin/contact/liste.php
 
 #--------------------- Controller ---------------------
 RewriteRule ^contactMainController$ controller/contact/ContactMainController.php
-RewriteRule ^projetServiceMainController$ controller/projetService/ProjetServiceMainController.php
+RewriteRule ^projetServiceMainController$ controller/projetService/ProjetServiceMainController.php [L,QSA]
 RewriteRule ^userMainController$ controller/user/userMainController.php
+RewriteRule ^competenceMainController$ controller/user/CompetenceMainController.php
 
 #--------------------- Model ---------------------
 RewriteRule ^userRepo$ model/UserRepository.php
 RewriteRule ^projetServiceRepo$ model/ProjetServiceRepository.php
-RewriteRule ^userRepo$ model/ContactRepository.php
+RewriteRule ^contactRepo$ model/ContactRepository.php
+RewriteRule ^competenceRepo$ model/CompetenceRepository.php

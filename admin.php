@@ -30,6 +30,9 @@
 	<!-- ================== SECTION SCRIPT ================== -->
 		<?php require_once ("view/sections/admin/script.php"); ?>
 
+	<!-- ================== CDN SWEETALERT ================== -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 	<!-- ================== SECTION Message erreur/success ================== -->
 		<?php require_once ("view/sections/admin/msgErreuSuccess.php"); ?>
 

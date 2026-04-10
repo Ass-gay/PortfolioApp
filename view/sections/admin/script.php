@@ -64,15 +64,15 @@
 
 		]);
 
-		// loadScriptsIfPathEndsWhith("listeUser",[
-		// 	"public/js/user/addFrmValidator.js",
-		// 	"public/js/user/editFrmValidator.js",
-		// 	"public/js/user/confirmDeletUser.js",
-		// 	"public/js/user/confirmRestaurerUser.js",
-		// 	"public/js/user/confirmSupDef.js",
-		// 	"public/js/user/showHideUser.js",
-		// 	"public/js/user/changePasswordValidator.js",
-		// ]);
+		loadScriptsIfPathEndsWhith("listeUser",[
+			"public/js/user/addFrmValidator.js",
+			"public/js/user/editFrmValidator.js",
+			"public/js/user/confirmDeletUser.js",
+			"public/js/user/confirmRestaurerUser.js",
+			"public/js/user/confirmSupDef.js",
+			"public/js/user/showHideUser.js",
+			"public/js/user/changePasswordValidator.js",
+		]);
 	</script>
 	
 

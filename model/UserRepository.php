@@ -179,6 +179,22 @@
                 throw $error;
             }
         }
+
+        // Permet de Changer password 
+        public function updatedPassword($userId, $hashedPassword)
+        {
+            $sql = "UPDATE users
+                    SET password = :password, updated_at = NOW(), updated_by = :updated_by WHERE id = :id ";
+            try {
+                $statement = $this->db->prepare($sql);
+                $statement->execute([ 'password' => $hashedPassword, 'updated_by' => $userId,'id' => $userId]);
+                return $statement->rowCount() > 0;
+
+            } catch (PDOException $error) {
+                error_log("Erreur lors de la modification du mot de passe" . $error->getMessage());
+                throw $error;
+            }
+        }
     }
 
 ?>

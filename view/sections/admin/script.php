@@ -27,7 +27,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	
 	<!-- ==================  GLOBAL JS ================== -->
-	<script src="public/js/global/Validator.js"></script>
+	<script src="public/js/global/Validator.js"></script>	
 
 
 	
@@ -54,15 +54,25 @@
 
 		]);
 
-		loadScriptsIfPathEndsWhith("listeUser",[
-			"public/js/user/addFrmValidator.js",
-			"public/js/user/editFrmValidator.js",
-			"public/js/user/confirmDeletUser.js",
-			"public/js/user/confirmRestaurerUser.js",
-			"public/js/user/confirmSupDef.js",
-			"public/js/user/showHideUser.js",
-			"public/js/user/changePasswordValidator.js",
+		loadScriptsIfPathEndsWhith("listeCompetence",[
+			"public/js/competence/addFrmValidatorCompetence.js",
+			"public/js/competence/editFrmValidatorCompetence.js",
+			"public/js/competence/confirmDeletCompetence.js",
+			"public/js/competence/RestaurerCompetence.js",
+			"public/js/competence/SupDefCompetence.js",
+			"public/js/competence/showHideCompetence.js"
+
 		]);
+
+		// loadScriptsIfPathEndsWhith("listeUser",[
+		// 	"public/js/user/addFrmValidator.js",
+		// 	"public/js/user/editFrmValidator.js",
+		// 	"public/js/user/confirmDeletUser.js",
+		// 	"public/js/user/confirmRestaurerUser.js",
+		// 	"public/js/user/confirmSupDef.js",
+		// 	"public/js/user/showHideUser.js",
+		// 	"public/js/user/changePasswordValidator.js",
+		// ]);
 	</script>
 	
 

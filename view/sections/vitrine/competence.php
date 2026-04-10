@@ -1,63 +1,57 @@
+
+<!-- ========= Recuperation liste des competence ========= -->
+<?php
+
+	require_once("model/CompetenceRepository.php");
+	$competenceRepository = new CompetenceRepository();
+
+	try {
+		$listeCompetence = $competenceRepository->getAll(1);
+	} catch (Exception $error) {
+		echo "<P>Erreur lors du changement de liste des competence" . $error->getMessage() . "</P>";
+		$listeCompetence = [];
+	}
+?>
+
 <!-- Skills Section -->
-      <section id="skills" class="skills section">
+<section id="skills" class="skills section">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Skills</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-        </div><!-- End Section Title -->
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2> # Mes Compétences</h2>
+      <p>Je mets à votre service mes compétences en design graphique et en développement web pour créer des solutions modernes, esthétiques et performantes adaptées à vos besoins.</p>
+    </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Liste des competence -->
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="row g-4 skills-animation">
+      <div class="row g-4 skills-animation">
 
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="skill-box">
-                <h3>HTML</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                <span class="text-end d-block">90%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+        <?php if(!empty($listeCompetence)) : ?>
+				<?php foreach ($listeCompetence as $competence) : ?>
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-box">
+              <!-- Nom -->
+              <h3><?= htmlspecialchars($competence['nom']); ?></h3>
+              <!-- Description -->
+              <p><?= htmlspecialchars($competence['description']); ?></p>
+
+              <!-- Niveau -->
+              <span class="text-end d-block"><?= htmlspecialchars($competence['niveau']); ?></span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<?= htmlspecialchars($competence['niveau']); ?>" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
 
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="skill-box">
-                <h3>CSS</h3>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-                <span class="text-end d-block">90%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
             </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="skill-box">
-                <h3>JavaScript</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor.</p>
-                <span class="text-end d-block">80%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-              <div class="skill-box">
-                <h3>Photoshop</h3>
-                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate.</p>
-                <span class="text-end d-block">55%</span>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
 
-        </div>
+        <?php endforeach ?>
+				<?php else :?>
+					<p class="alert alert-danger text-center h3 fw-bold">Aucun Competence trouvee !</p>
+				<?php endif ?>
 
-      </section><!-- /Skills Section -->
+      </div>
+
+    </div>
+    
+</section>

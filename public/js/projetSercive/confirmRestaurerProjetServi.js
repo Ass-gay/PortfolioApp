@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function (){
             const serviceProjetName = this.getAttribute('data-name');
 
             Swal.fire({
-                title: `Veuillez-vous bien Restaurer la realisation  ${serviceProjetName}`,
+                title: `Veuillez-vous bien Restaurer la Projet  ${serviceProjetName}`,
                 text: "Cette action est irreversibile !",
                 icon: "warning",
                 showCancelButton: true,
                 cancelButtonColor: '#3085d6',
-                cancelButtontext: 'Annuler la restauration',
+                cancelButtonText: 'Annuler la restauration',
                 confirmButtonColor: '#d33',
                 confirmButtonText: 'Oui, restaurer',
             }).then((reponse) => {

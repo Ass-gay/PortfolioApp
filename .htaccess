@@ -23,9 +23,9 @@ RewriteRule ^listeContact$ view/pages/admin/contact/liste.php
 
 #--------------------- Controller ---------------------
 RewriteRule ^contactMainController$ controller/contact/ContactMainController.php
-RewriteRule ^projetServiceMainController$ controller/projetService/ProjetServiceMainController.php [L,QSA]
+RewriteRule ^projetServiceMainController$ controller/projetService/ProjetServiceMainController.php
 RewriteRule ^userMainController$ controller/user/userMainController.php
-RewriteRule ^competenceMainController$ controller/user/CompetenceMainController.php
+RewriteRule ^competenceMainController$ controller/competence/CompetenceMainController.php
 
 #--------------------- Model ---------------------
 RewriteRule ^userRepo$ model/UserRepository.php

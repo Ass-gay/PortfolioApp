@@ -16,8 +16,22 @@
           <li><a href="#resume">CV</a></li>
           <li><a href="#services">SERVICE</a></li>
           <li><a href="#portfolio">PROJET</a></li>
+          <li><a href="#testimonials">TÉMOIGNAGE</a></li>
           <li><a href="#contact">CONTACT</a></li>
-          <li><a href="login">CONNEXION</a></li>
+          
+          <?php 
+						session_start();
+						if(isset($_SESSION['email'])) :?>
+							<li class="nav-item">
+								<a class="nav-link" href="admin">
+									<span class="brand-text">
+										Retour Vers<span class="text-primary">Admin</span>
+									</span>
+								</a>
+							</li>
+						<?php else : ?>
+							<li class="nav-item"><a class="nav-link" href="login">CONNEXION</a></li>
+						<?php endif ?>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

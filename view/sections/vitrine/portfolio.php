@@ -56,7 +56,7 @@
 
             <?php endforeach ?>
 						<?php else :?>
-							<p class="alert alert-danger text-center h3 fw-bold">Aucun Service trouvee !</p>
+							<p class="alert alert-danger text-center h3 fw-bold">Aucun Service Projet !</p>
 						<?php endif ?>
 
           </div>

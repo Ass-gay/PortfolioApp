@@ -1,132 +1,138 @@
 <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials section">
+<section id="testimonials" class="testimonials section">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Testimonials</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2># Témoignages</h2>
+    <p>Ce que disent nos clients et collaborateurs sur notre travail</p>
+  </div><!-- End Section Title -->
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper">
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          }
+        }
+      </script>
 
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="row gy-4 justify-content-center">
-                    <div class="col-lg-6">
-                      <div class="testimonial-content">
-                        <p>
-                          <i class="bi bi-quote quote-icon-left"></i>
-                          <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                          <i class="bi bi-quote quote-icon-right"></i>
-                        </p>
-                        <h3>Saul Goodman</h3>
-                        <h4>Ceo &amp; Founder</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                      <img src="public/templates/templateVitrine/assets/img/person/person-m-9.webp" class="img-fluid testimonial-img" alt="">
-                    </div>
+      <div class="swiper-wrapper">
+
+        <!-- Abdallah Diop -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-lg-6">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Un travail de qualité, rapide et très professionnel. Je recommande fortement !</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <h3>Abdallah Diop</h3>
+                  <h4>Graphiste</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                   </div>
                 </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="row gy-4 justify-content-center">
-                    <div class="col-lg-6">
-                      <div class="testimonial-content">
-                        <p>
-                          <i class="bi bi-quote quote-icon-left"></i>
-                          <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                          <i class="bi bi-quote quote-icon-right"></i>
-                        </p>
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                      <img src="public/templates/templateVitrine/assets/img/person/person-f-5.webp" class="img-fluid testimonial-img" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="row gy-4 justify-content-center">
-                    <div class="col-lg-6">
-                      <div class="testimonial-content">
-                        <p>
-                          <i class="bi bi-quote quote-icon-left"></i>
-                          <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                          <i class="bi bi-quote quote-icon-right"></i>
-                        </p>
-                        <h3>Jena Karlis</h3>
-                        <h4>Store Owner</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                      <img src="public/templates/templateVitrine/assets/img/person/person-f-12.webp" class="img-fluid testimonial-img" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="row gy-4 justify-content-center">
-                    <div class="col-lg-6">
-                      <div class="testimonial-content">
-                        <p>
-                          <i class="bi bi-quote quote-icon-left"></i>
-                          <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                          <i class="bi bi-quote quote-icon-right"></i>
-                        </p>
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                      <img src="public/templates/templateVitrine/assets/img/person/person-m-12.webp" class="img-fluid testimonial-img" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
+              </div>
+              <div class="col-lg-2 text-center">
+                <img src="public/templates/templateVitrine/assets/img/person/diop.png" class="img-fluid testimonial-img" alt="Abdallah Diop">
+              </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
-
         </div>
 
-      </section><!-- /Testimonials Section -->
+        <!-- Talla Sarr -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-lg-6">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Très bon développeur, sérieux et à l’écoute. Le projet a été livré parfaitement.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <h3>Talla Sarr</h3>
+                  <h4>Développeur</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 text-center">
+                <img src="public/templates/templateVitrine/assets/img/person/talla.png" class="img-fluid testimonial-img" alt="Talla Sarr">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Djiby Seck -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-lg-6">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Très bon travail full-stack, code propre et solution efficace pour notre projet.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <h3>Djiby Seck</h3>
+                  <h4>Full-Stack</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 text-center">
+                <img src="public/templates/templateVitrine/assets/img/person/djiby.png" class="img-fluid testimonial-img" alt="Djiby Seck">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faty Diop -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-lg-6">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Très satisfaite du service, professionnalisme et accompagnement de qualité.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <h3>Mbacke Ndiaye</h3>
+                  <h4>Entrepreneur</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 text-center">
+                <img src="public/templates/templateVitrine/assets/img/person/mbacke.png" class="img-fluid testimonial-img" alt="Mbacke Ndiaye">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section>

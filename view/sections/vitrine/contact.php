@@ -54,40 +54,56 @@
 
           <div class="col-lg-7">
             <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-              <h3>Get In Touch</h3>
-              <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
-
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="row gy-4">
-
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            
+              <form action="contactMainController" method="post" id="addContact" class="form-horizontal">
+                  <!-- Nom -->
+                  <div class="form-group row">
+                    <label for="nom" class="col-form-label col-lg-3 text-lg-right">Nom <span class="text-danger">*</span></label>
+                    <div class="col-lg-9">
+                      <input type="text" name="nom" id="nom" class="form-control" placeholder="Entre votre nom" />
+                      <p class="error-message mt-2"></p>
+                    </div>
                   </div>
 
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <!-- Email -->
+                  <div class="form-group row">
+                    <label for="email" class="col-form-label col-lg-3 text-lg-right">Email <span class="text-danger">*</span></label>
+                    <div class="col-lg-9">
+                      <input type="email" name="email" id="email" class="form-control" placeholder=" Entrer votre email" />
+                      <p class="error-message mt-2"></p>
+                    </div>
                   </div>
 
-                  <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <!-- Sujet -->
+                  <div class="form-group row">
+                    <label for="sujet" class="col-form-label col-lg-3 text-lg-right">Sujet <span class="text-danger">*</span></label>
+                    <div class="col-lg-9">
+                      <input type="text" name="sujet" id="sujet" class="form-control" placeholder="De quoi sagit il ?" />
+                      <p class="error-message mt-2"></p>
+                    </div>
                   </div>
 
-                  <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <!-- Message -->
+                  <div class="form-group row">
+                    <label for="message" class="col-form-label col-lg-3 text-lg-right">Message <span class="text-danger">*</span></label>
+                    <div class="col-lg-9">
+                      <textarea name="message" id="message" class="form-control" rows="5" placeholder="Laissez votre message..."></textarea>
+                      <p class="error-message mt-2"></p>
+                    </div>
                   </div>
 
-                  <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit" class="btn">Send Message</button>
+                  <!-- Button Soumission -->
+                  <div class="form-group row">
+                    <div class="col-lg-12 offset-lg-5">
+                      <button type="submit" name="frmContact" class="btn btn-theme btn-primary btn-block">
+                        Envoyer le message
+                      </button>
+                    </div>
                   </div>
 
-                </div>
               </form>
-
             </div>
+            
           </div>
 
         </div>

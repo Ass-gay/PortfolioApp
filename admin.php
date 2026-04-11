@@ -5,6 +5,8 @@
 <body>
 	
 
+	<!-- ================== Verification Session ================== -->
+		<?php require_once ("view/sections/admin/verifieSession.php"); ?>
 
 	<!-- ================== page-loader ================== -->
 		<?php require_once ("view/sections/admin/loader.php"); ?>

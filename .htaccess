@@ -17,6 +17,8 @@ RewriteRule ^listeCompetence$ view/pages/admin/competence/liste.php
 
 # User
 RewriteRule ^listeUser$ view/pages/admin/user/liste.php
+RewriteRule ^reinitEmail$ view/pages/vitrine/reinitEmail.php
+RewriteRule ^reinit$ view/pages/vitrine/reinit.php
 
 #Contact
 RewriteRule ^listeContact$ view/pages/admin/contact/liste.php

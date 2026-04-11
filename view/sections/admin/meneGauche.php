@@ -6,11 +6,11 @@
 						<a href="javascript:;" data-toggle="nav-profile">
 							<div class="cover with-shadow"></div>
 							<div class="image">
-								<img src="public/templates/templateAdmin/assets/img/user/user-13.jpg" alt="" />
+								<img src="public/images/user/<?= $photo ?>" alt="" />
 							</div>
 							<div class="info">
-								<b class="caret pull-right"></b>Sean Ngu
-								<small>Front end developer</small>
+								<b class="caret pull-right"></b><?= $nom ?>
+								<small><?= $email ?></small>
 							</div>
 						</a>
 					</li>

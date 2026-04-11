@@ -12,3 +12,13 @@
 
   <!-- Main JS File -->
   <script src="public/templates/templateVitrine/assets/js/main.js"></script>
+
+  
+	<!-- ================== CDN SWEETALERT ================== -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+	<!-- ==================  GLOBAL JS ================== -->
+	<script src="public/js/global/Validator.js"></script>	
+
+  <!-- ================== JS CONTACT ================== -->
+	<script src="public/js/contact/contactFrmV.js"></script>
